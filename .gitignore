@@ -1,0 +1,56 @@
+# Exclude everything
+/*
+
+# Except for default project files
+!/.github
+!/build-aux
+!/cmake
+!/data
+!/docs
+!/installer
+!/src
+!/tests
+!.clang-format
+!.gersemirc
+!.gitignore
+!buildspec.json
+!CMakeLists.txt
+!CMakePresets.json
+!CODE_OF_CONDUCT.md
+!CONTRIBUTING.md
+!LICENSE
+!README.md
+!SECURITY.md
+
+# Exclude lock files
+*.lock.json
+
+# Exclude CMake build number cache
+/cmake/.CMakeBuildNumber
+
+# OS / editor junk
+.DS_Store
+*.swp
+*.swo
+.idea/
+# .vscode/
+
+# AI model memory/context files
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+AGENTS.md
+CODEX.md
+.codex/
+.opencode/
+.cursorrules
+.cursor/
+.aider*
+.copilot/
+.serena/
+graphify-out/
+*.pt
+
+# Local working docs and scratch scripts (kept out of the repo)
+*.local.md
+*.local.py

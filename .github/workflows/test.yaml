@@ -1,0 +1,22 @@
+name: Test
+on:
+  workflow_call:
+jobs:
+  unit-tests:
+    name: Test (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15, windows-2022]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -S tests -B build_tests -DCMAKE_BUILD_TYPE=Debug
+
+      - name: Build
+        run: cmake --build build_tests --config Debug
+
+      - name: Test
+        run: ctest --test-dir build_tests -C Debug --output-on-failure
